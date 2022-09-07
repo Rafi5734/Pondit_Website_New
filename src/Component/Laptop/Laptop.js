@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./laptop.css";
 import {
   Button,
   Carousel,
   Col,
   Container,
+  Form,
+  InputGroup,
   Nav,
   Navbar,
   Row,
@@ -29,8 +31,19 @@ import { Avatar, Card } from "antd";
 
 const { Meta } = Card;
 const Laptop = () => {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
   return (
-    <>
+    <div>
       <div className="laptop_main">
         <Container>
           <Row>
@@ -471,7 +484,116 @@ const Laptop = () => {
           </Row>
         </Container>
       </div>
-    </>
+
+      <div className="location_main">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d542.3652037289087!2d90.39971969354988!3d23.86891413136818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c424c5b61833%3A0xd69adfa23a3916b3!2sRajuk%20Rajib%20Cosmo%20Shopping%20Complex!5e0!3m2!1sen!2sbd!4v1662528728831!5m2!1sen!2sbd"
+          width="100%"
+          height="450"
+          style={{ border: "0" }}
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="rajuk rajib cosmo shopping complex"
+        ></iframe>
+
+        <Container style={{ width: "100%", height: "75vh" }}>
+          <h1
+            className="mt-5 text-center fw-lighter"
+            style={{ color: "#0288d1" }}
+          >
+            GET IN TOUCH
+          </h1>
+
+          <Form
+            noValidate
+            validated={validated}
+            onSubmit={handleSubmit}
+            className="mt-5"
+          >
+            <Row className="mb-3">
+              <Form.Group as={Col} md="6" controlId="validationCustom01">
+                <Form.Label>Name</Form.Label>
+                <Form.Control required type="text" placeholder="Name" />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group as={Col} md="6" controlId="validationCustom02">
+                <Form.Label>Email</Form.Label>
+                <Form.Control required type="email" placeholder="Email" />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please enter a valid email address.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row className="mb-3">
+              <Form.Group as={Col} md="12" controlId="validationCustom03">
+                <Form.Label>Subject</Form.Label>
+                <Form.Control type="text" placeholder="Subject" required />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid city.
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group
+                as={Col}
+                md="12"
+                controlId="validationCustom04"
+                className="mt-3"
+              >
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Message"
+                  required
+                  style={{ height: "100px" }}
+                />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please provide a valid state.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Form.Group className="mb-3">
+              <Form.Check
+                required
+                label="Agree to terms and conditions"
+                feedback="You must agree before submitting."
+                feedbackType="invalid"
+              />
+            </Form.Group>
+            <Button type="submit">Submit Now</Button>
+          </Form>
+        </Container>
+        <div
+          style={{
+            width: "100%",
+            height: "45vh",
+          }}
+          className="footer_main"
+        >
+          <Container>
+            <Row>
+              <Col className="d-flex justify-content-center align-content"></Col>
+              <Col className="d-flex justify-content-center align-content secondary-logo">
+                <img src={Pondit_Logo} alt="pondit-logo" className="mt-4"></img>
+              </Col>
+              <Col className="d-flex justify-content-center align-content"></Col>
+            </Row>
+          </Container>
+
+          <p className="text-center lead ms-5 me-5 mt-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
