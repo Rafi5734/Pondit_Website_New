@@ -1,0 +1,44 @@
+.heading_main{
+    background-image: url("../../images/01_Pondit_Homepage_Phn_Home_Background_image.png");
+    width: 100%;
+    height: 65vh;
+}
+.about_us{
+    width: 100%;
+    height: 120vh;
+}
+.courses{
+    width: 100%;
+    height: 70vh;
+}
+.categories{
+    width: 100%;
+    height: 120vh;
+}
+.seip{
+    width: 100%;
+    height: 50vh;
+    background-color: #07294e;
+}
+.SCHOLARSHIP{
+    width: 100%;
+    height: 50vh;
+    background-color: #092f56;
+}
+.students{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../images/01_Pondit_Homepage_skill_bg.png");
+}
+.mentors{
+    width: 100%;
+    height: 210vh;
+}
+.success_story{
+    width: 100%;
+    height: 100vh;
+}
+.partners{
+    width: 100%;
+    height: 35vh;
+}
