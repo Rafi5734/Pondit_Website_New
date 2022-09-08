@@ -7,7 +7,6 @@ import {
   Container,
   Nav,
   Navbar,
-  NavDropdown,
   Row,
 } from "react-bootstrap";
 import Pondit_Logo from "../../images/01_Pondit_Homepage-final-logo.png";
@@ -618,13 +617,38 @@ const Phone = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.5827015229697!2d90.39779971744383!3d23.868947600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c55251220de1%3A0x252d0802e97850b3!2sPONDIT!5e0!3m2!1sen!2sbd!4v1662559791179!5m2!1sen!2sbd"
           width="600"
           height="450"
-          style={{ border : "0"}}
+          style={{ border: "0" }}
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="pondit_map"
         ></iframe>
       </div>
+
+      <Container className="footer">
+        <Container fluid>
+          <Row>
+            <Col className="d-flex justify-content-center align-center">
+              <img src={Pondit_Logo} alt="pondit_logo" className="mt-5"></img>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="d-flex justify-content-center align-center">
+              <div className="mt-3">
+                <span className="mt-5 text-center">
+                  রাজউক রাজীব কসমো শপিং কমপ্লেক্স। লেভেল: ৫
+                </span>
+
+                <p className="text-center">
+                  প্লট: ৭১, সেক্টর: ৭, আজমপুর, উত্তরা, ঢাকা-১২৩০
+                </p>
+                <p className="text-center">+০১৮৯৭৬৫৪৩২৫</p>
+                <p className="text-center">info@pondit.com</p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
     </div>
   );
 };
