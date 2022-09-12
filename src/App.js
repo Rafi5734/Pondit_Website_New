@@ -20,13 +20,23 @@ const App = () => {
 
   return (
     <div>
-      
-        <p>
-          
-          {width >= 1366 && <><Laptop></Laptop> </>}
-          {width <= 950 && width >= 650 && <><Tab></Tab> </>}
-          {width <= 650 && <><Phone></Phone> </>}
-        </p>
+      <p>
+        {width >= 1366 && width <= 1366 &&(
+          <>
+            <Laptop></Laptop>{" "}
+          </>
+        )}
+        {width <= 950 && width >= 650 && (
+          <>
+            <Phone></Phone>{" "}
+          </>
+        )}
+        {width <= 650 && (
+          <>
+            <Phone></Phone>{" "}
+          </>
+        )}
+      </p>
     </div>
   );
 };

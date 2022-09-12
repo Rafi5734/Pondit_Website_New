@@ -592,6 +592,7 @@ const Laptop = () => {
             and scrambled it to make a type specimen book.
           </p>
         </div>
+        
       </div>
     </div>
   );
